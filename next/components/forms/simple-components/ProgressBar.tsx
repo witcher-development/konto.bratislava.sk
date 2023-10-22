@@ -9,6 +9,7 @@ type ProgressBarBase = {
   minValue?: number
   maxValue?: number
   className?: string
+  mirrored?: boolean
 }
 
 const ProgressBar = ({
@@ -18,6 +19,7 @@ const ProgressBar = ({
   minValue = 0,
   maxValue = 100,
   className,
+    mirrored
 }: ProgressBarBase) => {
   const id = useId()
   const { progressBarProps, labelProps } = useProgressBar({
@@ -38,18 +40,17 @@ const ProgressBar = ({
   return (
     <div className="flex w-full flex-col">
       <div {...progressBarProps} className={progressBarStyleContainer}>
-        <div className={cx('flex-column flex h-6 w-full items-center rounded-l-lg bg-gray-100')}>
+        <div className={cx('flex-column flex h-6 w-full items-center rounded-l-lg bg-gray-100', {
+          'transform rotate-180': mirrored === true
+        })}>
           <div
             style={{ width: barWidth }}
-            className={cx('h-6 rounded-l-lg flex justify-center text-white', {
+            className={cx('h-6 rounded-l-lg flex justify-center', {
               'bg-gray-100': type === 'default',
               'bg-success-700': type === 'success',
               'bg-blue-500': type === 'city',
             })}
           >
-            <div className={cx({ 'transform rotate-180': type === 'success'})}>
-              {value}%
-            </div>
           </div>
         </div>
       </div>

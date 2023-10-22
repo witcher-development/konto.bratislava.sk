@@ -9,6 +9,7 @@ import IconButton from "@rjsf/core/lib/components/templates/ButtonTemplates/Icon
 import ButtonNew from "../../../simple-components/ButtonNew";
 import {useEffect, useState} from "react";
 import {goals, Goal} from "../../../../../pages/city-hero";
+import Link from "next/link";
 
 type ActualBlockBase = {
   announcementContent?: string
@@ -62,27 +63,34 @@ const AnnouncementBlock = ({
 
   const { t } = useTranslation('account')
   return announcementContent ? (
-    <div className="mb-6 px-4 lg:mb-16 lg:px-0">
+    <div className="mb-6 px-4 lg:mb-16 lg:px-0 w-full">
       <h2 className="text-h2 mb-4 lg:mb-6">{t('account_section_intro.announcement_title')}</h2>
-      <div className="flex w-full flex-col-reverse gap-8 rounded-lg border-2 border-gray-200 lg:flex-row lg:rounded-3xl">
-        <div className="flex w-full flex-col justify-center gap-4 p-8 lg:w-1/2 lg:gap-6">
+      <div className="flex w-full flex-col-reverse gap-8 rounded-lg lg:flex-row lg:rounded-3xl">
+        <div className="flex w-full flex-col justify-center gap-4 lg:gap-6">
 
-            {goals.map(({ name, cityProgress, communityProgress }) => (
-                <div className="flex border-2 border-gray p-8 rounded-3xl">
+            {goals.map(({ id, name, cityProgress, communityProgress, communityProgressLabel, cityProgressLabel }) => (
+                <Link href={`/city-hero?id=${id}`}>
+                <div className="flex flex-col gap-5 w-full border-2 border-gray p-4 rounded-xl">
+                    <h3 className="text-h3">
+                        {name}
+                    </h3>
                     <div className="flex">
-                        <div style={{ width: '200px' }}>
-                            <ProgressBar value={cityProgress} type="city" />
+                        <div className="flex flex-col items-center gap-2" style={{ width: '50%' }}>
+                            <ProgressBar value={cityProgress} type="city" label="100kg" />
+                            <p className="mr-2">
+                                {cityProgressLabel}
+                            </p>
                         </div>
                         <div className="bg-gray-200 h-6 w-0.5"></div>
-                        <div style={{ width: '200px' }} className="transform rotate-180">
-                            <ProgressBar value={communityProgress} type="success" />
+                        <div className="flex flex-col items-center gap-2" style={{ width: '50%' }}>
+                            <ProgressBar value={communityProgress} type="success" label="500 points" mirrored={true} />
+                            <p className="ml-2">
+                                {communityProgressLabel}
+                            </p>
                         </div>
                     </div>
-                    <ButtonNew
-                        variant="black-link"
-                        href="/city-hero"
-                    ><ChevronRightIcon /></ButtonNew>
                 </div>
+                </Link>
             ))}
 
         </div>

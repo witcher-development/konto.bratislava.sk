@@ -121,23 +121,23 @@ const PaymentData = ({ tax }: PaymentDataProps) => {
                 <div className="text-16">{t('you_will_be_redirected_to_the_payment_gateway')}</div>
               </div>
               {/* Desktop 'To pay' button */}
-              <Button
-                variant="category"
-                size="lg"
-                text={t('to_pay')}
-                className="hidden min-w-max lg:block"
-                onPress={redirectToPaymentGateway}
-                disabled={status?.paymentStatus !== 'unpaid'}
-              />
+              {/*<Button*/}
+              {/*  variant="category"*/}
+              {/*  size="lg"*/}
+              {/*  text={t('to_pay')}*/}
+              {/*  className="hidden min-w-max lg:block"*/}
+              {/*  onPress={redirectToPaymentGateway}*/}
+              {/*  disabled={status?.paymentStatus !== 'unpaid'}*/}
+              {/*/>*/}
               {/* Mobile 'To pay' button */}
-              <Button
-                variant="category"
-                size="sm"
-                text={t('to_pay')}
-                className="block min-w-full lg:hidden"
-                onPress={redirectToPaymentGateway}
-                disabled={status?.paymentStatus !== 'unpaid'}
-              />
+              {/*<Button*/}
+              {/*  variant="category"*/}
+              {/*  size="sm"*/}
+              {/*  text={t('to_pay')}*/}
+              {/*  className="block min-w-full lg:hidden"*/}
+              {/*  onPress={redirectToPaymentGateway}*/}
+              {/*  disabled={status?.paymentStatus !== 'unpaid'}*/}
+              {/*/>*/}
             </div>
             <div className="flex grow flex-col gap-4 self-stretch rounded-lg border-2 border-solid border-gray-200 p-4 lg:flex-row lg:p-6">
               <div className="flex w-full grow flex-col items-start justify-between gap-2 self-stretch">
