@@ -37,7 +37,6 @@ const ProgressBar = ({
   )
   return (
     <div className="flex w-full flex-col">
-      {label && <span {...labelProps}>{label}</span>}
       <div {...progressBarProps} className={progressBarStyleContainer}>
         <div className={cx('flex-column flex h-2 w-full items-center bg-gray-200')}>
           <div
@@ -48,9 +47,6 @@ const ProgressBar = ({
             })}
           />
         </div>
-
-        {/* "before" creates space for percentage value, so the progressbar doesn't change width */}
-        <div className='text-p2 text-right before:invisible before:block before:h-0 before:overflow-hidden before:content-["100%"]'>{`${value}%`}</div>
       </div>
     </div>
   )
