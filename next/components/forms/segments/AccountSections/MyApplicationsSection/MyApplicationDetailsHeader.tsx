@@ -72,12 +72,12 @@ const MyApplicationDetailsHeader = (props: MyApplicationDetailsHeaderBase) => {
               <p className="text-p2-semibold text-main-700">{category}</p>
               <div className="flex w-full items-center justify-between">
                 <h1 className="text-h1">TODO Podanie</h1>
-                <Button
-                  className="hidden md:flex"
-                  startIcon={<DownloadIcon className="h-6 w-6" />}
-                  text={t('download_pdf')}
-                  onPress={exportPdf}
-                />
+                {/*<Button*/}
+                {/*  className="hidden md:flex"*/}
+                {/*  startIcon={<DownloadIcon className="h-6 w-6" />}*/}
+                {/*  text={t('download_pdf')}*/}
+                {/*  onPress={exportPdf}*/}
+                {/*/>*/}
               </div>
             </div>
             <div className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-4">
@@ -104,13 +104,13 @@ const MyApplicationDetailsHeader = (props: MyApplicationDetailsHeaderBase) => {
                 </p>
               </div>
             </div>
-            <Button
-              fullWidth
-              className="flex md:hidden"
-              startIcon={<DownloadIcon className="h-6 w-6" />}
-              text={t('download_pdf')}
-              onPress={exportPdf}
-            />
+            {/*<Button*/}
+            {/*  fullWidth*/}
+            {/*  className="flex md:hidden"*/}
+            {/*  startIcon={<DownloadIcon className="h-6 w-6" />}*/}
+            {/*  text={t('download_pdf')}*/}
+            {/*  onPress={exportPdf}*/}
+            {/*/>*/}
           </div>
         </div>
       </div>

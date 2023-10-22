@@ -38,15 +38,19 @@ const ProgressBar = ({
   return (
     <div className="flex w-full flex-col">
       <div {...progressBarProps} className={progressBarStyleContainer}>
-        <div className={cx('flex-column flex h-5 w-full items-center rounded-l-lg bg-gray-100')}>
+        <div className={cx('flex-column flex h-6 w-full items-center rounded-l-lg bg-gray-100')}>
           <div
             style={{ width: barWidth }}
-            className={cx('h-5 rounded-l-lg', {
+            className={cx('h-6 rounded-l-lg flex justify-center text-white', {
               'bg-gray-100': type === 'default',
               'bg-success-700': type === 'success',
               'bg-blue-500': type === 'city',
             })}
-          />
+          >
+            <div className={cx({ 'transform rotate-180': type === 'success'})}>
+              {value}%
+            </div>
+          </div>
         </div>
       </div>
     </div>

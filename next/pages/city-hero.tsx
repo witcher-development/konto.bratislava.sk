@@ -50,7 +50,8 @@ export type Task = {
 export type Goal = {
     id: number,
     name: string
-    progress: number
+    cityProgress: number
+    communityProgress: number
 }
 
 
@@ -59,12 +60,12 @@ const createTask = (name: string, description: string, score: number, goalId?: n
     id: uuid(), name, description, score, goalId
 })
 
-const createGoal = (id: number, name: string, progress: number): Goal => ({
-    id, name, progress
+const createGoal = (id: number, name: string, cityProgress: number, communityProgress: number): Goal => ({
+    id, name, cityProgress, communityProgress
 })
 
 export const goals: Goal[] = [
-    createGoal(1, 'Waste reduction', 45)
+    createGoal(1, 'Waste reduction', 60, 30)
 ]
 
 const tasks: Task[] = [

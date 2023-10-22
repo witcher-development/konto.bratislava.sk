@@ -67,15 +67,15 @@ const AnnouncementBlock = ({
       <div className="flex w-full flex-col-reverse gap-8 rounded-lg border-2 border-gray-200 lg:flex-row lg:rounded-3xl">
         <div className="flex w-full flex-col justify-center gap-4 p-8 lg:w-1/2 lg:gap-6">
 
-            {goals.map(({ name, progress }) => (
+            {goals.map(({ name, cityProgress, communityProgress }) => (
                 <div className="flex border-2 border-gray p-8 rounded-3xl">
                     <div className="flex">
                         <div style={{ width: '200px' }}>
-                            <ProgressBar value={progress} type="city" />
+                            <ProgressBar value={cityProgress} type="city" />
                         </div>
                         <div className="bg-gray-200 h-6 w-0.5"></div>
                         <div style={{ width: '200px' }} className="transform rotate-180">
-                            <ProgressBar value={progress} type="success" />
+                            <ProgressBar value={communityProgress} type="success" />
                         </div>
                     </div>
                     <ButtonNew
