@@ -39,7 +39,7 @@ const ProgressBar = ({
     <div className="flex w-full flex-col">
       {label && <span {...labelProps}>{label}</span>}
       <div {...progressBarProps} className={progressBarStyleContainer}>
-        <div className={cx('flex-column flex h-2 w-full items-center rounded-full bg-gray-200')}>
+        <div className={cx('flex-column flex h-2 w-full items-center bg-gray-200')}>
           <div
             style={{ width: barWidth }}
             className={cx('h-2 rounded-full', {

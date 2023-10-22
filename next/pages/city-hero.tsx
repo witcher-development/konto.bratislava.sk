@@ -39,39 +39,43 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     }
 }
 
-type Task = {
+export type Task = {
     id: string,
     name: string
     description: string
     score: number
+    goalId?: number
 }
 
-type Goal = {
-    id: string,
+export type Goal = {
+    id: number,
     name: string
     progress: number
-    tasks: Task[]
 }
 
 
 
-const createTask = (name: string, description: string, score: number): Task => ({
-    id: uuid(), name, description, score
+const createTask = (name: string, description: string, score: number, goalId?: number): Task => ({
+    id: uuid(), name, description, score, goalId
 })
 
-const createGoal = (name: string, progress: number, tasks: Task[]): Goal => ({
-    id: uuid(), name, progress, tasks
+const createGoal = (id: number, name: string, progress: number): Goal => ({
+    id, name, progress
 })
 
-const goals: Goal[] = [
-    createGoal('Waste reduction', 45, [
-        createTask('Take a Quiz', 'Very important quiz', 5)
-    ])
+export const goals: Goal[] = [
+    createGoal(1, 'Waste reduction', 45)
+]
+
+const tasks: Task[] = [
+    createTask('Take a Quiz', 'Very important quiz', 5),
+    createTask('Fill Out a Survey: What is your waste production level?', '', 10, 1),
+    createTask('Upcycle at KOLO', '', 20, 1),
 ]
 
 const profile = {
-    name: '',
-    rank: '',
+    name: 'Climadude',
+    rank: 2,
     score: 300
 }
 

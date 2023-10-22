@@ -8,7 +8,7 @@ import UploadFileCard from "../../../widget-components/Upload/UploadFileCard";
 import IconButton from "@rjsf/core/lib/components/templates/ButtonTemplates/IconButton";
 import ButtonNew from "../../../simple-components/ButtonNew";
 import {useEffect, useState} from "react";
-import {client, Goal} from "../../../../../pages/city-hero";
+import {goals, Goal} from "../../../../../pages/city-hero";
 
 type ActualBlockBase = {
   announcementContent?: string
@@ -49,16 +49,16 @@ const AnnouncementBlock = ({
   buttonTitle,
   onPress,
 }: ActualBlockBase) => {
-    const [goals, setGoals] = useState<Goal[]>([])
-
-    useEffect(() => {
-        const fetch = async () => {
-            const response = await client.get('/goal')
-
-            setGoals(response.data)
-        }
-        fetch()
-    }, [])
+    // const [goals, setGoals] = useState<Goal[]>([])
+    //
+    // useEffect(() => {
+    //     const fetch = async () => {
+    //         const response = await client.get('/goal')
+    //
+    //         setGoals(response.data)
+    //     }
+    //     fetch()
+    // }, [])
 
   const { t } = useTranslation('account')
   return announcementContent ? (
@@ -67,9 +67,14 @@ const AnnouncementBlock = ({
       <div className="flex w-full flex-col-reverse gap-8 rounded-lg border-2 border-gray-200 lg:flex-row lg:rounded-3xl">
         <div className="flex w-full flex-col justify-center gap-4 p-8 lg:w-1/2 lg:gap-6">
 
-            {goals.map(({ name, progress, tasks }) => (
+            {goals.map(({ name, progress }) => (
                 <div className="flex border-2 border-gray p-8 rounded-3xl">
-                    <ProgressBar value={progress} type="success" label={name} />
+                    <div className="flex">
+                        <ProgressBar value={progress} type="success" />
+                        <div className="transform rotate-180">
+                            <ProgressBar value={progress} type="success" />
+                        </div>
+                    </div>
                     <ButtonNew
                         variant="black-link"
                         href="/city-hero"
