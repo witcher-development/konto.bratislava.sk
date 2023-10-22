@@ -156,10 +156,11 @@
   "engines": {
     "node": "18.x",
     "npm": ">=6.0.0",
-    "yarn": "1.22"
+    "yarn": "3"
   },
   "volta": {
-    "node": "16.19.0",
-    "yarn": "1.22.19"
-  }
+    "node": "18.x",
+    "yarn": "3"
+  },
+  "packageManager": "yarn@3.6.4"
 }
