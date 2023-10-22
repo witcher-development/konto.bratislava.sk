@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "inlineSourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "noImplicitAny": false,
+    "paths": {
+      "@utils": ["./utils"],
+      "@utils/*": ["./utils/*"],
+      "@assets/images": ["./assets/images/index.ts"],
+      "@assets/ui-icons": ["./assets/ui-icons/index.ts"],
+      "@assets/images/*": ["./assets/images/*"],
+      "@assets/icons/*": ["./assets/icons/*"],
+      "@backend/*": ["./backend/*"],
+      "@clients/*": ["./clients/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
+  "exclude": ["node_modules", "schema-generator"]
+}
