@@ -138,19 +138,19 @@ export const AccountNavBar = ({ className, sectionsList, menuItems, hiddenHeader
                   />
                 ) : (
                   <>
-                    <Button
-                      className="whitespace-nowrap lg:flex"
-                      size="sm"
-                      onPress={login}
-                      variant="plain-black"
-                      text={t('account:menu_login_link')}
-                    />
-                    <Button
-                      onPress={register}
-                      variant="negative"
-                      text={t('account:menu_register_link')}
-                      size="sm"
-                    />
+                    {/*<Button*/}
+                    {/*  className="whitespace-nowrap lg:flex"*/}
+                    {/*  size="sm"*/}
+                    {/*  onPress={login}*/}
+                    {/*  variant="plain-black"*/}
+                    {/*  text={t('account:menu_login_link')}*/}
+                    {/*/>*/}
+                    {/*<Button*/}
+                    {/*  onPress={register}*/}
+                    {/*  variant="negative"*/}
+                    {/*  text={t('account:menu_register_link')}*/}
+                    {/*  size="sm"*/}
+                    {/*/>*/}
                   </>
                 )}
               </div>
