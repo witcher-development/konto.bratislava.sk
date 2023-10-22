@@ -116,24 +116,24 @@ const TaxFeeSectionHeader = ({ tax }: AccountSectionHeaderBase) => {
                 {t('tax_detail_section.title', { year: tax?.year })}
               </div>
 
-              {status.paymentStatus === 'unpaid' && (
-                <Button
-                  startIcon={<PaymentIcon fill="white" className="h-6 w-6" />}
-                  variant="black"
-                  text={t('pay_tax')}
-                  size="sm"
-                  className="hidden md:block"
-                  onPress={redirectToPaymentGateway}
-                />
-              )}
-              <Button
-                startIcon={<DownloadIcon className="h-5 w-5" />}
-                variant="black-outline"
-                text={t('download_pdf')}
-                size="sm"
-                className="hidden md:block"
-                onPress={downloadPdf}
-              />
+              {/*{status.paymentStatus === 'unpaid' && (*/}
+              {/*  <Button*/}
+              {/*    startIcon={<PaymentIcon fill="white" className="h-6 w-6" />}*/}
+              {/*    variant="black"*/}
+              {/*    text={t('pay_tax')}*/}
+              {/*    size="sm"*/}
+              {/*    className="hidden md:block"*/}
+              {/*    onPress={redirectToPaymentGateway}*/}
+              {/*  />*/}
+              {/*)}*/}
+              {/*<Button*/}
+              {/*  startIcon={<DownloadIcon className="h-5 w-5" />}*/}
+              {/*  variant="black-outline"*/}
+              {/*  text={t('download_pdf')}*/}
+              {/*  size="sm"*/}
+              {/*  className="hidden md:block"*/}
+              {/*  onPress={downloadPdf}*/}
+              {/*/>*/}
             </div>
             <div className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-4">
               <div className="flex gap-2">
@@ -174,24 +174,24 @@ const TaxFeeSectionHeader = ({ tax }: AccountSectionHeaderBase) => {
             {/* for mobile version */}
             <div className="block w-full md:hidden">
               <div className="flex flex-col gap-3">
-                {status.paymentStatus === 'unpaid' && (
-                  <Button
-                    startIcon={<PaymentIcon className="h-5 w-5" />}
-                    variant="black"
-                    text={t('pay_tax')}
-                    size="sm"
-                    className="min-w-full"
-                    onPress={redirectToPaymentGateway}
-                  />
-                )}
-                <Button
-                  startIcon={<DownloadIcon className="h-5 w-5" />}
-                  variant="black-outline"
-                  text={t('download_pdf')}
-                  size="sm"
-                  className="min-w-full"
-                  onPress={downloadPdf}
-                />
+                {/*{status.paymentStatus === 'unpaid' && (*/}
+                {/*  <Button*/}
+                {/*    startIcon={<PaymentIcon className="h-5 w-5" />}*/}
+                {/*    variant="black"*/}
+                {/*    text={t('pay_tax')}*/}
+                {/*    size="sm"*/}
+                {/*    className="min-w-full"*/}
+                {/*    onPress={redirectToPaymentGateway}*/}
+                {/*  />*/}
+                {/*)}*/}
+                {/*<Button*/}
+                {/*  startIcon={<DownloadIcon className="h-5 w-5" />}*/}
+                {/*  variant="black-outline"*/}
+                {/*  text={t('download_pdf')}*/}
+                {/*  size="sm"*/}
+                {/*  className="min-w-full"*/}
+                {/*  onPress={downloadPdf}*/}
+                {/*/>*/}
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { useId } from 'react'
 import { useProgressBar } from 'react-aria'
 
 type ProgressBarBase = {
-  type?: 'success' | 'default'
+  type?: 'success' | 'default' | 'city'
   label?: string
   value: number
   minValue?: number
@@ -38,12 +38,13 @@ const ProgressBar = ({
   return (
     <div className="flex w-full flex-col">
       <div {...progressBarProps} className={progressBarStyleContainer}>
-        <div className={cx('flex-column flex h-2 w-full items-center bg-gray-200')}>
+        <div className={cx('flex-column flex h-5 w-full items-center rounded-l-lg bg-gray-100')}>
           <div
             style={{ width: barWidth }}
-            className={cx('h-2 rounded-full', {
-              'bg-gray-700': type === 'default',
+            className={cx('h-5 rounded-l-lg', {
+              'bg-gray-100': type === 'default',
               'bg-success-700': type === 'success',
+              'bg-blue-500': type === 'city',
             })}
           />
         </div>

@@ -70,8 +70,11 @@ const AnnouncementBlock = ({
             {goals.map(({ name, progress }) => (
                 <div className="flex border-2 border-gray p-8 rounded-3xl">
                     <div className="flex">
-                        <ProgressBar value={progress} type="success" />
-                        <div className="transform rotate-180">
+                        <div style={{ width: '200px' }}>
+                            <ProgressBar value={progress} type="city" />
+                        </div>
+                        <div className="bg-gray-200 h-6 w-0.5"></div>
+                        <div style={{ width: '200px' }} className="transform rotate-180">
                             <ProgressBar value={progress} type="success" />
                         </div>
                     </div>
