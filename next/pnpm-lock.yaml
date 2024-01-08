@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.2.1
   '@hookform/resolvers':
-    specifier: ^2.9.10
-    version: 2.9.11(react-hook-form@7.47.0)
+    specifier: ^3.3.4
+    version: 3.3.4(react-hook-form@7.47.0)
   '@internationalized/date':
     specifier: 3.5.0
     version: 3.5.0
@@ -3853,8 +3853,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@hookform/resolvers@2.9.11(react-hook-form@7.47.0):
-    resolution: {integrity: sha512-bA3aZ79UgcHj7tFV7RlgThzwSSHZgvfbt2wprldRkYBcMopdMvHyO17Wwp/twcJasNFischFfS7oz8Katz8DdQ==}
+  /@hookform/resolvers@3.3.4(react-hook-form@7.47.0):
+    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
